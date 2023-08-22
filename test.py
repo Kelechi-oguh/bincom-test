@@ -33,31 +33,34 @@ for key, values in data.items():
 colour_count = Counter(colour_list)
 
 new_data = pd.Series(colour_count)
-print('New Data: ', new_data, '\n')
+print(new_data, '\n')
 
 
-# The Mean
+# SOLUTIONS BEGIN HERE!!!
+print('SOLUTIONS BEGIN HERE', '\n')
+
+# 1. The Mean
 print('The Mean: ', new_data.mean(), '\n')
 
-# Which color is mostly worn throughout the week?
+# 2. Which color is mostly worn throughout the week?
 the_mode = new_data.max()
 mode_colour = new_data[new_data==the_mode]
 print('The Mostly Worn Colour: ', mode_colour, '\n')
 
-# The Median
+#3. The Median
 print('The Median: ', new_data.median(), '\n')
 
-# The Variance
+#4. The Variance
 print('The Variance: ', variance(new_data), '\n')
 
 
-# Probability that a color is red:
+#5. Probability that a color is red:
 pr_red = new_data.sum() / new_data['RED']
 print('Probability of choosing RED: ', pr_red, '\n')
 
 
 
-# Save the colours and their frequencies in postgresql database
+# 6. Save the colours and their frequencies in postgresql database
 # try:
 #     # establish connection
 #     conn = psycopg2.connect(
@@ -73,7 +76,7 @@ print('Probability of choosing RED: ', pr_red, '\n')
 #     # Creating a cursor object
 #     cursor = conn.cursor()
     
-#     # Doping EMPLOYEE table if already exists.
+#     # Droping table if already exists.
 #     cursor.execute("DROP TABLE IF EXISTS dress_colour")
 
 #     # create table
@@ -96,7 +99,7 @@ print('Probability of choosing RED: ', pr_red, '\n')
 
 
 
-# A recursive searching algorithm to search for a number entered by user in a list of numbers.
+# 7. A recursive searching algorithm to search for a number entered by user in a list of numbers.
 def search(arr, num, startIndex, endIndex):
     # Ensure the list is sorted in ascending/descending order for the function to work correctly
     if endIndex >= startIndex:
@@ -131,7 +134,7 @@ result = search(arr, num, 0, len(arr)-1)
 #     print("Number not found in array", '\n')
 
 
-# Write a program that generates random 4 digits number of 0s and 1s and convert the generated number to base 10.
+# 8. Write a program that generates random 4 digits number of 0s and 1s and convert the generated number to base 10.
 rand_n = np.random.randint(0, 2, size=(1,4))[0]
 numb = ''
 for i in rand_n:
@@ -143,7 +146,7 @@ to_base10 = int(numb, 2)
 print('to_base10: ', to_base10, '\n')
 
 
-# Write a program to sum the first 50 fibonacci sequence.
+# 9. Write a program to sum the first 50 fibonacci sequence.
 def fibonacci_Sum(n) :
     if (n <= 0) :
         return 0
